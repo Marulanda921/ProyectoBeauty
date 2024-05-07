@@ -44,7 +44,7 @@ public class ClientEntity {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "employee",
+    @OneToMany(mappedBy = "client",
      fetch = FetchType.EAGER, cascade = CascadeType.ALL,
      orphanRemoval = false
      )

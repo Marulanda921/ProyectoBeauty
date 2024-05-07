@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Appointment {
+public class    Appointment {
     //Llave primaria
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

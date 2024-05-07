@@ -2,19 +2,10 @@ package com.riwi.BeautySalon.Domain.Entity;
 
 import com.riwi.BeautySalon.Utils.enums.RoleEmployee;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
-
+import java.util.List;
 
 
 @Data
@@ -44,4 +35,11 @@ public class Employee {
     @Enumerated(EnumType.STRING)
     private RoleEmployee role;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "service",
+     fetch = FetchType.EAGER, cascade = CascadeType.ALL,
+     orphanRemoval = false
+     )
+    private List<Appointment> appointment;
 }
